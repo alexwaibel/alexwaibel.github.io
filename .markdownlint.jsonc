@@ -1,0 +1,4 @@
+{
+    // Liquid expressions in URLs can be mistaken for bare URLs and corrupted by the MD034 fixer.
+    "MD034": false
+}

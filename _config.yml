@@ -25,7 +25,7 @@ repository: "alexwaibel/alexwaibel.github.io"
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes@4.28.1
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -69,9 +69,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Alex Waibel"
-  avatar : "/assets/images/alex-profile.png"
-  bio    : "A software engineer with a life-long passion for technology."
+  name: "Alex Waibel"
+  avatar: "/assets/images/alex-profile.png"
+  bio: "A software engineer with a life-long passion for technology."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

@@ -12,7 +12,7 @@ Welcome to my new personal website! I've once again decided to rebuild this site
 
 This time around I've gone with a simplified setup using the [Minimal Mistakes template repo](https://github.com/mmistakes/mm-github-pages-starter). My hope is that by migrating to this template I can merge in any upkeep tasks and changes from that template and focus primarily on content rather than churn maintaining the site itself. GitHub Pages has proved very reliable in the past for hosting simple sites like this.
 
-Publishing new articles is extremely easy with this setup. All you need to do is create a new markdown document in the `_posts` directory and on push this article gets automatically deployed by a GitHub Actions workflow which you can see [here](<https://github.com/{{> site.repository }}/blob/master/.github/workflows/jekyll.yml). For example, see the source for [this article](<https://github.com/{{> site.repository }}/blob/master/_posts/2024-03-15-new-personal-website.md).
+Publishing new articles is extremely easy with this setup. All you need to do is create a new Markdown document in the `_posts` directory. When it is pushed, a GitHub Actions [workflow](https://github.com/{{site.repository}}/blob/master/.github/workflows/jekyll.yml) automatically deploys it. For example, see the [source for this article](https://github.com/{{site.repository}}/blob/master/_posts/2024-03-15-new-personal-website.md).
 
 If you're interested in hosting a similar website yourself it's quite easy. Check out the [GitHub Pages docs](https://pages.github.com/) for a quick start. There's a ton of available open source templates to get you started or you can create a Jekyll site yourself from scratch.
 

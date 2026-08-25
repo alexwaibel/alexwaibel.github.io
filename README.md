@@ -1,11 +1,34 @@
 # Alex Waibel's Personal Website
-This is the repository for my personal website, including some blog posts. The site is written in [Jekyll](https://github.com/jekyll/jekyll), using the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes) and served using [GitHub Pages](https://pages.github.com/).
 
+This repository contains my personal website and blog. It is built with [Jekyll](https://github.com/jekyll/jekyll), uses the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes), and is deployed with [GitHub Pages](https://pages.github.com/).
 
-## Running the project
-The easiest way to start this project is to use VS Code and docker to deploy the devcontainer either on GitHub Codespaces or locally. You'll need to use the following in the container's terminal to see the jekyll logs:
+## Local development
+
+Open the repository in its devcontainer or a GitHub Codespace. Dependencies are installed when the container is created; start the preview server explicitly so its output and lifecycle remain visible:
+
 ```bash
-tail -f nohup.out
+bundle exec jekyll serve --livereload --force_polling
 ```
 
-Otherwise if you don't want to use docker you can follow [this guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) to run it locally.
+The site is available at <http://localhost:4000>. Run a production-style build without starting a server with:
+
+```bash
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+Outside the devcontainer, install the Ruby version in `.ruby-version`, install Bundler, and run `bundle install` first.
+
+## Publishing
+
+Create posts in `_posts` using the `YYYY-MM-DD-title.md` naming convention. A push to `master` builds and deploys the site through GitHub Actions. Posts dated in the future are withheld by Jekyll until their publication date.
+
+## Updating dependencies
+
+`Gemfile.lock` is committed so local and CI builds use the same dependency versions. Dependabot proposes monthly updates. To update manually, change the pinned `github-pages` version in `Gemfile` and the Minimal Mistakes release in `_config.yml`, then run:
+
+```bash
+bundle update github-pages
+bundle exec jekyll build
+```
+
+Commit the resulting `Gemfile.lock` change with the version pins.
